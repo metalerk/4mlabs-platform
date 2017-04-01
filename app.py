@@ -55,7 +55,6 @@ def videos():
 def watch_video(id_video=''):
 
 	autoplay = request.args.get("autoplay", "0")
-	print(autoplay)
 
 	videos = mongo.db.videos.find({"_id" : ObjectId(id_video)})
 	videos_res = [video for video in videos]
