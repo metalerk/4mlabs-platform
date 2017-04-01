@@ -2,7 +2,16 @@
 
 {% block title %}Page Not Found{% endblock %}
 {% block body %}
-  <h1>Page Not Found</h1>
-  <p>What you were looking for is just not there.
-  <p><a href="{{ url_for('index') }}">go somewhere nice</a>
+  <div class="container">
+  	<div class="row">
+  		<div class="col l12 m12 s12 center">
+  			<br>
+  			<h1>Page Not Found :(</h1>
+  			<br>
+			<h4>What you were looking for is just not there.</h4>
+			<br>
+			<h4><a href="{{ url_for('index') }}">Go Home</a></h4>
+  		</div>
+  	</div>
+  </div>
 {% endblock %}
