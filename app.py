@@ -13,11 +13,11 @@ import os
 
 app = Flask(__name__, template_folder='templates', static_url_path='/static')
 
-app.config['MONGODB_URI'] = os.environ['MONGO_URI']
+app.config['MONGODB_URI'] = os.environ['MONGODB_URI']
 
-app.config['MONGO_DBNAME'] = os.environ['MONGO_DBNAME']
+app.config['MONGODB_DBNAME'] = os.environ['MONGO_DBNAME']
 
-mongo = PyMongo(app, config_prefix="MONGO")
+mongo = PyMongo(app, config_prefix="MONGODB")
 
 year = time.strftime("%Y", time.gmtime())
 
