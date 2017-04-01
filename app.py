@@ -14,6 +14,8 @@ import os
 app = Flask(__name__, template_folder='templates', static_url_path='/static')
 
 app.config['MONGO_DBNAME'] = os.environ['MONGO_DBNAME']
+app.config['MONGO_USERNAME'] = os.environ['MONGO_USERNAME']
+app.config['MONGO_PASSWORD'] = os.environ['MONGO_PASSWORD']
 
 mongo = PyMongo(app, config_prefix="MONGO")
 
