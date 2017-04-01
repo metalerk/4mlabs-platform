@@ -1,0 +1,109 @@
+<!DOCTYPE html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://ogp.me/ns/fb#">
+<html>
+<head>
+	<meta property="og:image" content="https://ledroideenchaine.com/wp-content/uploads/2016/08/Legacy-code.jpg" />
+	<title>{% block title %}{% endblock %}</title>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	  crossorigin="anonymous"></script>
+		
+		<!-- Compiled and minified CSS -->
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+
+	  <!-- Compiled and minified JavaScript -->
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+	  <link rel="stylesheet" href="/static/base.css">
+
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/components/icon.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/icon.min.css">
+
+</head>
+<body>
+	<header>
+	  <div class="navbar-fixed">
+	    <nav>
+	      <div class="nav-wrapper black">
+	        <a href="/" class="brand-logo" style="margin-left: 1em;"><i class="cube large icon"></i>4M Labs</a>
+	        
+	        <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 5em;">
+	          <li><a href="/"><i class="home icon"></i>Home</a></li>
+	          <li><a href="/about"><i class="info icon"></i>About</a></li>
+	          <li><a href="/videos"><i class="video play outline icon"></i>Videos</a></li>
+	          <li><a href="/projects"><i class="terminal icon"></i>Projects</a></li>
+	          <li><a href="/music"><i class="music icon"></i>Music</a></li>
+	          <li><a href="/cv"><i class="user icon"></i>CV</a></li>
+	          <li><a href="#"><i class="book icon"></i>Blog</a></li>
+	          <li><a href="/contact"><i class="mail icon"></i>Contact</a></li>
+	        </ul>
+	        <!-- RESPONSIVE MENU BUTTON -->
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="large material-icons">reorder</i></a>
+          <!-- END -->
+
+		  </div>
+	    </nav>
+	  </div>
+
+	  	<!-- RESPONSIVE MENU -->
+
+
+			  <ul id="slide-out" class="side-nav">
+			      
+			      <div class="container">
+			      	<div class="row">
+			      		<h1>Menu</h1>
+
+			      	</div>
+			      </div>
+
+			      <div class="collection">
+			        <a href="#!" class="collection-item blue-text text-lighten-1">About</a>
+			        <a href="#!" class="collection-item blue-text text-lighten-1">CV</a>
+			        <a href="/posts" class="collection-item blue-text text-lighten-1">Blog</a>
+			        <a href="#!" class="collection-item blue-text text-lighten-1">Proyectos</a>
+			        <a href="#!" class="collection-item blue-text text-lighten-1">Contacto</a>
+			      </div>
+				</ul>
+			  
+			<!-- END -->
+	    
+	        
+	</header>
+
+	<main>
+		{% block body %}
+		{% endblock %}
+	</main>
+
+	<footer class="page-footer black">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">4M Labs</h5>
+                <p class="grey-text text-lighten-4">The best for the bests.</p>
+                {% block music %}{% endblock %}
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Contact</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            <i class="copyright icon"></i> {{ context.year }} Copyright 4M Labs | All Rights Reserved
+            </div>
+          </div>
+        </footer>
+
+	<script>
+	$('.button-collapse').sideNav();
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}{{ context.title }}{% endblock %}
+{% block body %}
+  
+	<div class="container">
+		<div class="row">
+			<div class="col l12 m12 s12">
+				<h2 class="header center">
+					Music
+				</h2>
+			</div>
+		</div>
+		<div class="row">
+			
+		  <div class="carousel carousel-slider center" data-indicators="true">
+		    {% for item in context.music %}
+		    <div class="carousel-item black white-text" href="#one!">
+		      <h2>{{ item['track'] }}</h2>
+		      <p class="white-text">{{ item['album'] }}</p>
+		      <p class="white-text">{{ item['artist'] }}</p>
+
+				<div class="container">
+					<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//{{ item['url'] }}&amp;color=ff5500&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false"></iframe>
+				</div>
+
+		    </div>
+		    {% endfor %}
+		  </div>
+
+		</div>
+	</div>
+
+	<script>
+		$('.carousel.carousel-slider').carousel({fullWidth: true});
+	</script>
+	
+{% endblock %}

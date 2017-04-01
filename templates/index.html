@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ context.title }}
+{% endblock %}
+
+{% block body %}
+<!-- https://ledroideenchaine.com/wp-content/uploads/2016/08/Legacy-code.jpg -->
+<div class="section black">
+    <div class="row container">
+      <div class="col s6 left">
+      	<p class="grey-text text-lighten-4 flow-text">Talk is cheap, show me the code.</p>
+      	<p class="grey-text text-lighten-4 right">Linus Torvalds</p>
+      </div>
+    </div>
+  </div>
+
+<div class="parallax-container">
+    <div class="parallax"><img src="http://wallpapercave.com/wp/yLn9K6k.jpg"></div>
+  </div>
+
+<div class="section black">
+    <div class="row container">
+      <h2 class="header grey-text text-lighten-4">Ideas</h2>
+      <p class="grey-text text-lighten-4 flow-text">The best ideas for the best moments.</p>
+    </div>
+  </div>
+
+<div class="parallax-container">
+    <div class="parallax"><img src="http://wallpapercave.com/wp/sfBQ8PU.jpg"></div>
+  </div>
+  <div class="section black">
+    <div class="row container">
+      <h2 class="header grey-text text-lighten-4">Projects</h2>
+      <p class="grey-text text-lighten-4 flow-text">New ideas brings new technologies and the simplest details still count.</p>
+
+		
+	<div class="row">
+
+      <div class="col s4">
+
+      	<div class="card-panel small black">
+      	<h4 class="white-text flow-text">AnimeFLV Crawler</h4>
+          <span class="white-text">
+          	Collects from AnimeFLV site new episodes, series info and more. Then builds a JSON object and stores it in a MongoDB database.
+          </span>
+        </div>
+
+      </div>
+      <div class="col s4">
+        <div class="card-panel small black">
+        <h4 class="white-text flow-text">ROSS</h4>
+          <span class="white-text">
+          	Allow making HTTP requests against .onion sites in the Tor network. It retrieves the HTML for analyzing.
+          </span>
+        </div>
+      </div>
+      <div class="col s4">
+        <div class="card-panel small black">
+        <h4 class="white-text flow-text">VKT Killer Tool</h4>
+          <span class="white-text">
+          Kills a VNC running instance in Windows-based systems.
+          Mostly used by employees to avoid productivity monitoring.
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+
+    </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="https://newevolutiondesigns.com/images/freebies/futuristic-city-wallpaper-44.jpg"></div>
+  </div>
+
+  <div class="section black">
+    <div class="row container">
+      <h2 class="header grey-text text-lighten-4">Music</h2>
+      <p class="grey-text text-lighten-4 flow-text">Because you can't build the future without some great music.</p>
+      <p class="grey-text text-lighten-4 flow-text">Chill out and imagine your next big project.</p>
+    </div>
+  </div>
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://synthmusicdirect.com/wp-content/uploads/2015/09/9.jpg"></div>
+  </div>
+
+  <div class="section ">
+  <div class="container">
+    <div class="row">
+      <h2 class="header black-text">Powered by</h2>
+      <br><br>
+   </div>
+   </div>
+   <div class="row">
+      <div class="col l4 m4 s12">
+      	<img class="responsive-img" src="https://www.python.org/static/community_logos/python-logo-inkscape.svg" alt="" style="width: 300px; height: auto;">
+      </div>
+      <div class="col l4 m4 s12">
+      	<img class="responsive-img" src="static/img/mongo.png" alt="" style="width: 300px; height: auto;">
+      </div>
+      <div class="col l4 m4 s12">
+      	<img class="responsive-img" src="http://flask.pocoo.org/static/logo/flask.png" alt="" style="width: 300px; height: auto;">
+      </div>
+      
+    </div>
+  </div>
+
+	<script>
+    $(document).ready(function(){
+      $('.parallax').parallax();
+    });
+        
+	</script>
+
+{% endblock %}
+
+{% block music %}
+	<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/314373540&amp;color=ff5500&amp;auto_play=true&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false"></iframe>
+{% endblock %}

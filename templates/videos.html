@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ context.title }}
+{% endblock %}
+
+{% block body %}
+<br>
+<div class="container">
+	<div class="row">		
+		{% for cat in context.categories %}
+			<div class="col l12 m12 s12">
+				<h3 id={{cat['category']}} class="header center">
+					{{cat['category'].capitalize()}}
+				</h3>
+				<br>
+			</div>
+		
+			{% for video in context.videos %}
+			<div class="col l12 m12 s12">
+				{% if video['category'] == cat['_id']: %}
+					<h5 class="header">{{video.name}}</h5>
+					<p class="header">{{video.description}}</p>
+					<br>
+					<a class="waves-effect waves-light btn black" href="/videos/{{video['_id']}}/watch" target="_blank">Watch</a>
+					<br><br>
+					<div class="divider"></div>
+				{% endif %}
+				
+			</div>
+			{% endfor %}
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}
