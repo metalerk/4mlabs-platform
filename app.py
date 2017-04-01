@@ -43,9 +43,6 @@ def videos():
 	categories = [category for category in mongo.db.videos_category.find()]
 	videos = [category for category in mongo.db.videos.find()]
 
-	print(categories)
-	print(videos)
-
 	context = {
 		"title" : "Videos",
 		"categories" : categories,
