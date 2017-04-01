@@ -13,7 +13,7 @@ import os
 
 app = Flask(__name__, template_folder='templates', static_url_path='/static')
 
-app.config['MONGO_URI'] = os.environ['MONGO_URI']
+app.config['MONGODB_URI'] = os.environ['MONGO_URI']
 
 app.config['MONGO_DBNAME'] = os.environ['MONGO_DBNAME']
 
