@@ -9,10 +9,11 @@ from flask import abort
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 import time
+import os
 
 app = Flask(__name__, template_folder='templates', static_url_path='/static')
 
-app.config['MONGO_DBNAME'] = "4mlabs"
+app.config['MONGO_DBNAME'] = os.environ['MONGO_DBNAME']
 
 mongo = PyMongo(app, config_prefix="MONGO")
 
@@ -128,4 +129,4 @@ def page_not_found(e):
 	return render_template('404.html', context=context), 404
 
 if __name__ == '__main__':
-	app.run(host='0.0.0.0',debug=True, port=8080)
+	app.run(host='0.0.0.0',debug=False, port=8080)
