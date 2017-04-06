@@ -144,11 +144,15 @@ def login():
 			admin = admin[0]
 			session['username'] = username
 			return redirect(url_for('panel'))
+		else:
+			abort(404)
 
 	else:
 
 		if 'username' in session:
 			return redirect(url_for("panel"))
+		else:
+			abort(404)
 
 		context = {
 			"title" : "Login",
