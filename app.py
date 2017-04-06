@@ -152,13 +152,12 @@ def login():
 		if 'username' in session:
 			return redirect(url_for("panel"))
 		else:
-			abort(404)
-
-		context = {
-			"title" : "Login",
-			"year" : year,
-		}
-		return render_template("login.html", context=context)
+			
+			context = {
+				"title" : "Login",
+				"year" : year,
+			}
+			return render_template("login.html", context=context)
 
 @app.route("/panel")
 def panel():
