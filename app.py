@@ -6,10 +6,13 @@ from flask import request
 from flask import url_for
 from flask import redirect
 from flask import abort
+from flask import session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 import time
 import os
+import random
+import string
 
 app = Flask(__name__, template_folder='templates', static_url_path='/static')
 
@@ -20,6 +23,8 @@ app.config['MONGODB_DBNAME'] = os.environ['MONGODB_DBNAME']
 mongo = PyMongo(app, config_prefix="MONGODB")
 
 year = time.strftime("%Y", time.gmtime())
+
+app.config['SECRET_KEY'] = ''.join(random.SystemRandom().choice(string.ascii_uppercase + string.digits) for _ in range(50))
 
 @app.route('/')
 def index():
@@ -126,5 +131,58 @@ def page_not_found(e):
 		}
 	return render_template('404.html', context=context), 404
 
+@app.route("/control", methods=["GET", "POST"])
+def login():
+
+	if request.method == "POST":
+		username = request.form.get('username')
+		password = request.form.get('password')
+
+		admin = [username for username in mongo.db.admin_user.find({"username" : username, "password" : password})]
+
+		if admin:
+			admin = admin[0]
+			session['username'] = username
+			return redirect(url_for('panel'))
+
+	else:
+
+		if 'username' in session:
+			return redirect(url_for("panel"))
+
+		context = {
+			"title" : "Login",
+			"year" : year,
+		}
+		return render_template("login.html", context=context)
+
+@app.route("/panel")
+def panel():
+
+	if 'username' in session:
+		context = {
+			"title" : "Panel",
+			"year" : year,
+		}
+		return render_template("panel.html", context=context)
+
+	else:
+		return redirect("control")
+
+@app.route('/logout')
+def logout():
+	if 'username' in session:
+		session.pop("username")
+		return redirect("control")
+	else:
+		abort(404)
+
 if __name__ == '__main__':
-	app.run(host='0.0.0.0',debug=False, port=8000)
+	
+	DEBUG = True
+	
+	if os.environ['CURRENT_ENV'] == "PROD":
+		DEBUG = False
+	else:
+		pass
+	app.run(host='0.0.0.0',debug=DEBUG, port=8000)

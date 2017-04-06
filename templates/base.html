@@ -32,14 +32,15 @@
 	        <a href="/" class="brand-logo" style="margin-left: 1em;"><i class="cube large icon"></i>4M Labs</a>
 	        
 	        <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 5em;">
-	          <li><a href="/"><i class="home icon"></i>Home</a></li>
+	          <!--<li><a href="/"><i class="home icon"></i>Home</a></li>-->
 	          <li><a href="/about"><i class="info icon"></i>About</a></li>
 	          <li><a href="/videos"><i class="video play outline icon"></i>Videos</a></li>
 	          <li><a href="/projects"><i class="terminal icon"></i>Projects</a></li>
 	          <li><a href="/music"><i class="music icon"></i>Music</a></li>
 	          <li><a href="/cv"><i class="user icon"></i>CV</a></li>
-	          <li><a href="#"><i class="book icon"></i>Blog</a></li>
+	          <!--<li><a href="#"><i class="book icon"></i>Blog</a></li>-->
 	          <li><a href="/contact"><i class="mail icon"></i>Contact</a></li>
+	          <li>{% block user %} {% endblock %}</li>
 	        </ul>
 	        <!-- RESPONSIVE MENU BUTTON -->
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="large material-icons">reorder</i></a>
