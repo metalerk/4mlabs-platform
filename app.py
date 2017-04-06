@@ -144,17 +144,20 @@ def login():
 			admin = admin[0]
 			session['username'] = username
 			return redirect(url_for('panel'))
+		else:
+			return redirect('control')
 
 	else:
 
 		if 'username' in session:
 			return redirect(url_for("panel"))
-
-		context = {
-			"title" : "Login",
-			"year" : year,
-		}
-		return render_template("login.html", context=context)
+		else:
+			
+			context = {
+				"title" : "Login",
+				"year" : year,
+			}
+			return render_template("login.html", context=context)
 
 @app.route("/panel")
 def panel():
