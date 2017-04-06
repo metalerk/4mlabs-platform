@@ -145,7 +145,7 @@ def login():
 			session['username'] = username
 			return redirect(url_for('panel'))
 		else:
-			abort(404)
+			return redirect('control')
 
 	else:
 
